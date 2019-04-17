@@ -10,7 +10,8 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 		questions: [],
 		answers: [],
 		maximumFirst: 5,
-		maximumSecond: 5
+		maximumSecond: 5,
+		isPositive: true
     };
 
     //functions
@@ -89,6 +90,12 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 			number_2 = Math.round(Math.random()*Math.pow(10,$scope.model.secondDigit));
 		}
 		while(number_2 >= Math.pow(10,$scope.model.secondDigit) || number_2 < Math.pow(10,$scope.model.secondDigit-1))
+
+		if ($scope.model.isPositive == true && number_1 < number_2) {
+			var temp_num = number_1;
+			number_1 = number_2;
+			number_2 = temp_num;
+		}
 		
 		$scope.model.questions.push({
 			number_1: number_1,

@@ -31,7 +31,9 @@
 		  <option value="Subtraction">(-) Subtraction</option>
 		  <option value="Multiplication">(*) Multiplication</option>
 		</select><br/>
-		
+		<span ng-if="model.operator == 'Subtraction' && model.firstDigit==model.secondDigit">
+			<input type="checkbox" ng-checked="model.isPositive">First number > Second number<br>
+		</span>
 		<button ng-click="onClickGenerate()">Generate</button>
 	</div>
 	<div style="overflow-y:scroll;height:800px;padding-top:2em;" class="print">
