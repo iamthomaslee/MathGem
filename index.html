@@ -1,43 +1,74 @@
 <!DOCTYPE html>
 <html>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<script type="text/javascript" src="./init.js"></script>
-<script src="https://use.fontawesome.com/45d47e77d7.js"></script>
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.min.js"></script>
-<style type="text/css" media="print">
-.dontprint
-{ display: none; }
-.print
-{ 
-	height:100% !important;
-	overflow: hidden !important;
-}
-</style>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="./init.js"></script>
+	<script src="https://use.fontawesome.com/45d47e77d7.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Heebo:900" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.min.js"></script>
+	<style type="text/css" media="print">
+	.dontprint
+	{ display: none; }
+	.print
+	{ 
+		height:100% !important;
+		overflow: hidden !important;
+	}
+	</style>
+	<style>
+		body {
+			font-family: 'Open Sans', sans-serif, 'Roboto Mono', monospace;
+		}
+		h1 {
+			font-family: 'Heebo', sans-serif;
+			margin-top: 0px;
+		    margin-bottom: 0px;
+		}
+	</style>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138578614-1"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'UA-138578614-1');
+	</script>
+</head>
 <body>
 
 <div ng-app="mathApp" ng-controller="appController" class="app">
-	<div style="text-align:right;background-color:#cecece;padding:1em;" class="dontprint">
-		First digit: <input type="number" name="firstDigit" ng-model="model.firstDigit"/><br/>
-		Second digit: <input type="number" name="secondDigit" ng-model="model.secondDigit"/><br/>
-		Number of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions"/><br/>
-		Arithmetic Operators: <select name="operator" ng-model="model.operator">
-		  <option value="Addition">(+) Addition</option>
-		  <option value="Subtraction">(-) Subtraction</option>
-		  <option value="Multiplication">(*) Multiplication</option>
-		</select><br/>
-		<span ng-if="model.operator == 'Subtraction' && model.firstDigit==model.secondDigit">
-			<input type="checkbox" ng-checked="model.isPositive">First number > Second number<br>
-		</span>
-		<button ng-click="onClickGenerate()">Generate</button>
+	<div style="width:100%;background-color:#cecece;padding:1em;" class="dontprint">
+		<div style="display:inline-block;width:15%;text-align:left;">
+			<span style="font-size:1.12em;margin-bottom:0px;"><p>Free Math Worksheet</p></span><H1>MathGem</H1><span style="font-size:1.32em;"><p>www.mathgem.ca</p></span>
+		</div>
+		<div style="display:inline-block;width:60%;">
+			<p>&nbsp;</p>
+		</div>
+		<div style="display:inline-block;text-align:right;width:24%;">
+			First digit: <input type="number" name="firstDigit" ng-model="model.firstDigit"/><br/>
+			Second digit: <input type="number" name="secondDigit" ng-model="model.secondDigit"/><br/>
+			Number of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions"/><br/>
+			Arithmetic Operators: <select name="operator" ng-model="model.operator">
+				<option value="Addition">(+) Addition</option>
+				<option value="Subtraction">(-) Subtraction</option>
+				<option value="Multiplication">(*) Multiplication</option>
+				<option value="Division">(/) Division</option>
+			</select><br/>
+			<span>
+				<input type="checkbox" ng-model="model.isPositive">First number > Second number<br>
+			</span>
+			<button ng-click="onClickGenerate()">Generate</button>
+		</div>		
 	</div>
 	<div style="overflow-y:scroll;height:800px;padding-top:2em;" class="print">
-		<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;">
+		<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator !== 'Division'">
 			<div style="width:120px;">
 				<div>
 					<span style="font-size:0.9em">{{$index+1}} )</span>
@@ -57,14 +88,33 @@
 				</div>
 			</div>
 		</div>
+		<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator == 'Division'">
+			<div style="width:120px;">
+				<div>
+					<span style="font-size:0.9em">{{$index+1}} )</span>
+				</div>
+				<div style="margin:0;padding:0;display: inline-block;width:40px;text-align:right;"><span style="margin:0;padding-right:5px;font-size:2em;">{{q.number_2}}</span></div>
+				<div style="margin:0;padding-left:5px;display: inline-block;text-align:left;border-top-style:solid;border-top-width:1px;border-top-color:#000000;border-left-style:solid;border-left-width:1px;border-left-color:#000000;">
+					<span style="margin:0;padding:0;font-size:2em;">{{q.number_1}}</span>
+				</div>
+				<div style="height:150px;">
+					<span style="margin:0;padding:0;font-size:2em;">&nbsp;</span>
+				</div>
+			</div>
+		</div>
 	</div>	
-	<div style="page-break-before: always">
-		<H1>Answer Sheet</H1>
+	<div style="page-break-before: always;padding:1em;">
+		<span style="font-size:1.12em;"><p>Free Math Worksheet</p></span><H1>MathGem</H1><span style="font-size:1.32em;"><p>www.mathgem.ca</p></span>
+		<H3>Answer Sheet</H3>
 		<hr/>
-		<div ng-repeat="a in model.answers track by $index" style="width:150px;display:inline-block;">
+		<div ng-repeat="a in model.answers track by $index" style="width:140px;display:inline-block;">
 			
-				<span style="font-size:1em">{{$index+1}} ) {{a.answer}}</span>
+				<span style="font-size:1em"><p>{{$index+1}} ) {{a.answer}}</p></span>
 			
+		</div>
+		<hr/>
+		<div>
+			<p>Copyright © mathgem.ca 2019</p>
 		</div>
 	</div>
 </div>

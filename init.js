@@ -11,7 +11,7 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 		answers: [],
 		maximumFirst: 5,
 		maximumSecond: 5,
-		isPositive: true
+		isPositive: false
     };
 
     //functions
@@ -59,9 +59,15 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 	
 	$scope.$watch("model.operator", function (newValue, oldValue) {
         if (newValue != oldValue) {
-			getAnswer();
+					getAnswer();
         }
-    });
+		});
+		
+	$scope.$watch("model.isPositive", function (newValue, oldValue) {
+		if (newValue != oldValue) {
+			console.log(newValue);
+		}
+	});
 
     function activate() {
 		for (var i = 0; i<$scope.model.numberOfQuestions; i++) {
@@ -71,6 +77,7 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
     };
 	
 	function onClickGenerate() {
+		console.log("isPositive: "+$scope.model.isPositive);
 		$scope.model.questions = [];
 		for (var i = 0; i<$scope.model.numberOfQuestions; i++) {
 			generate();	
@@ -106,6 +113,8 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 	function getAnswer() {
 		$scope.model.answers = [];
 		var result = 0;
+		var divResult = 0;
+		var divMod = 0;
 		for (var i = 0; i < $scope.model.questions.length; i++) {
 			if ($scope.model.operator == "Addition") {
 				result = $scope.model.questions[i].number_1 + $scope.model.questions[i].number_2;
@@ -113,9 +122,15 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 				result = $scope.model.questions[i].number_1 - $scope.model.questions[i].number_2;
 			} else if ($scope.model.operator == "Multiplication") {
 				result = $scope.model.questions[i].number_1 * $scope.model.questions[i].number_2;
+			} else if ($scope.model.operator == "Division") {
+				result = $scope.model.questions[i].number_1 / $scope.model.questions[i].number_2;
+				divResult = Math.floor(result);
+				divMod = $scope.model.questions[i].number_1 % $scope.model.questions[i].number_2;
 			}
+
+			var resultString = ($scope.model.operator == "Division") ? result.toLocaleString() + " (" + divResult + "..." + divMod + ")" : result.toLocaleString();
 			$scope.model.answers.push({
-				answer: result.toLocaleString()
+				answer: resultString
 			});
 		}
 	}
