@@ -62,12 +62,6 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 					getAnswer();
         }
 		});
-		
-	$scope.$watch("model.isPositive", function (newValue, oldValue) {
-		if (newValue != oldValue) {
-			console.log(newValue);
-		}
-	});
 
     function activate() {
 		for (var i = 0; i<$scope.model.numberOfQuestions; i++) {
@@ -77,7 +71,6 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
     };
 	
 	function onClickGenerate() {
-		console.log("isPositive: "+$scope.model.isPositive);
 		$scope.model.questions = [];
 		for (var i = 0; i<$scope.model.numberOfQuestions; i++) {
 			generate();	
