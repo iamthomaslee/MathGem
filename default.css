@@ -1,0 +1,48 @@
+@media only print {
+    .dontprint {
+        display: none; 
+    }
+    .print { 
+        height:100% !important;
+        overflow: hidden !important;
+    }
+}
+body {
+    font-family: 'Open Sans', sans-serif, 'Roboto Mono', monospace;
+}
+h1 {
+    font-family: 'Heebo', sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.top-button {
+    width: 230px;
+    padding:1em;
+    margin:0.5em;
+    background-color:white;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size:1.3em;
+    position: relative;
+    float: left;
+    cursor: pointer;
+}
+.top-button:hover {
+    opacity: 0.80;
+    background-color:tomato;
+    color:white;
+}
+.modal-title {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size:2em;
+}
+.modal-body {
+    font-size: 1.1em;
+}
+@media only screen {
+    .hideFromScreen {
+        display:none;
+    }
+}

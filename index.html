@@ -3,187 +3,174 @@
 <head>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="./init.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Heebo:900" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
 	<script src="https://cdn.jsdelivr.net/lodash/4.16.4/lodash.min.js"></script>
-	<style type="text/css" media="print">
-	.dontprint
-	{ display: none; }
-	.print
-	{ 
-		height:100% !important;
-		overflow: hidden !important;
-	}
-	</style>
-	<style type="text/css">
-		body {
-			font-family: 'Open Sans', sans-serif, 'Roboto Mono', monospace;
-		}
-		h1 {
-			font-family: 'Heebo', sans-serif;
-			margin-top: 0px;
-		    margin-bottom: 0px;
-		}
-		.top-button {
-			width: 170px;
-			padding:1em;
-			margin:0.5em;
-			background-color:white;
-			text-align: center;
-			font-family: 'Roboto Condensed', sans-serif;
-			font-weight: 700;
-			font-size:1.3em;
-			position: relative;
-			float: left;
-			cursor: pointer;
-		}
-		.top-button:hover {
-			opacity: 0.80;
-			background-color:tomato;
-			color:white;
-		}
-		.modal-title {
-			font-family: 'Roboto Condensed', sans-serif;
-			font-weight: 700;
-			font-size:1.3em;
-		}
-	</style>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/> -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	
+	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Open+Sans|Heebo:900" rel="stylesheet">	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138578614-1"></script>
+	<link rel="stylesheet" type="text/css" href="./default.css">
 	<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
 	gtag('config', 'UA-138578614-1');
 	</script>
+
+	<title>MathGem - Free Math Worksheet</title>
+	<meta name="description" content="MathGem is a website that generates and printable basic math (arithmetic) worksheets for free. The website does not require any registration or login.">
+	<meta name="og:title" property="og:title" content="MathGem - Free Basic Arithmetic Worksheet">
+	<meta name="og:description" property="og:description" content="MathGem is a website that generates printable basic math (arithmetic) worksheets for free. The website does not require any registration or login.">
+	<meta name="og:image" property="og:image" content="http://mathgem.ca/assets/mathgem_image.png"/>
+	<meta name="og:url" property="og:url" content="http://www.mathgem.ca/"/>
+	<link href="http://www.mathgem.ca/" rel="canonical">
 </head>
 <body>
+	<div ng-app="mathApp" ng-controller="appController" class="app">
+		<div style="width:100%;background-color:#cecece;padding:1em;" class="dontprint">
+			<div style="display:inline-block;width:15%;text-align:left;vertical-align: top;">
+				<H1><span style="color: Tomato !important;font-size:0.8em;margin-right:0.3em;"><i class="fas fa-gem"></i></span>MathGem</H1><span style="font-size:1.1em;margin-bottom:0px;"><p>Free Basic Math Worksheet</p></span>
+			</div>
+			<div style="display:inline-block;width:60%;">			
+				<!-- Modal: About MathGem -->
+				<div class="top-button" data-toggle="modal" data-target="#about-mathgem"><span><i class="fas fa-info-circle"></i> About MathGem</span></div>
 
-<div ng-app="mathApp" ng-controller="appController" class="app">
-	<div style="width:100%;background-color:#cecece;padding:1em;" class="dontprint">
-		<div style="display:inline-block;width:15%;text-align:left;vertical-align: top;">
-			<H1><span style="color: Tomato !important;font-size:0.8em;margin-right:0.3em;"><i class="fas fa-gem"></i></span>MathGem</H1><span style="font-size:1.1em;margin-bottom:0px;"><p>Free Basic Math Worksheet</p></span>
-		</div>
-		<div style="display:inline-block;width:60%;">			
-			<!-- Modal: About MathGem -->
-			<div class="top-button" data-toggle="modal" data-target=".about-mathgem"><span>About MathGem</span></div>
-			<div class="modal fade about-mathgem" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-				<div class="modal-dialog modal-xl">
+				<!-- Modal -->
+				<div class="modal fade " id="about-mathgem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							<h5 class="modal-title" id="exampleModalCenterTitle">About MathGem</h5>
-							
+						<h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-info-circle"></i> About MathGem</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
 						</div>
 						<div class="modal-body">
-							<p>MathGem.ca is a free online service that generates math worksheets for basic arithmetic. The size of each digit is limited to 5, and the number of questions is limited to 1000. </p>
+							<p>MathGem is a website that generates printable basic math (arithmetic) worksheets for free. The website does not require any registration or login.</p>
+							<h4><b>For users: inquiries, issues, and feature request</b></h4>
+							<p>Hi, I am Thomas Lee. Thanks for visiting MathGem website. I initially built this web page for my kids (maybe for my wife?). I didn't spend too much time on it, so it might have some issues. If you find any problems or if you want to add additional features, please contact me by email <a href="mailto:leez79@gmail.com">leez79@gmail.com</a>.
+							<h4><b>For programmers!</b></h4>
+							<p>The code is available on github. <a href="https://github.com/iamthomaslee/basicMath" target="_blank">https://github.com/iamthomaslee/basicMath</a></p>
 						</div>
 						<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						</div>
+					</div>
+					</div>
+				</div>
+				
+				<!-- Modal: About MathGem -->
+				<div class="top-button" data-toggle="modal" data-target="#how-to-print"><span><i class="fas fa-question-circle"></i> Ctrl+P to Print</span></div>
+				
+				<!-- Modal -->
+				<div class="modal fade " id="how-to-print" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-question-circle"></i> How To Print Worksheet?</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+						</div>
+						<div class="modal-body">
+							<h4><b>Ctrl + P from the browser to print</b></h4>
+							<p>It is already set to print the questions and answers properly, but it can be viewed/printed differently on each browser or on each computer. By default, the header (where the logo and top menus are located) will not be shown on the printed page.</p>
+							<h4><b>Adjust size</b></h4>
+							<p>On the Print pop-up screen, it is possible to change the print settings. If you want to include more questions per page, just change the scale to 70% or to any ratio you want. 
+							<h4><b>Answer sheet</b></h4>
+							<p style="color:red;">The answer sheet will be printed at the end of the pages.</p>
+						</div>
+						<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
+					</div>
 					</div>
 				</div>
 			</div>
-			
-			<!-- Modal: About MathGem -->
-			<div class="top-button" data-toggle="modal" data-target=".how-to-print"><span>How To Print?</span></div>
-			<div class="modal fade how-to-print" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-					<div class="modal-dialog modal-xl">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalCenterTitle">How To Print?</h5>
-								<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
-							<div class="modal-body">
-								...
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-								<button type="button" class="btn btn-primary">Save changes</button>
-							</div>
-						</div>
-					</div>
-				</div>
-		</div>
-		<div style="display:inline-block;text-align:right;width:24%;">
-			First digit: <input type="number" name="firstDigit" ng-model="model.firstDigit"/><br/>
-			Second digit: <input type="number" name="secondDigit" ng-model="model.secondDigit"/><br/>
-			Number of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions"/><br/>
-			Arithmetic Operators: <select name="operator" ng-model="model.operator">
-				<option value="Addition">(+) Addition</option>
-				<option value="Subtraction">(-) Subtraction</option>
-				<option value="Multiplication">(*) Multiplication</option>
-				<option value="Division">(/) Division</option>
-			</select><br/>
-			<span>
-				<input type="checkbox" ng-model="model.isPositive">First number > Second number<br>
-			</span>
-			<button ng-click="onClickGenerate()">Generate</button>
-		</div>		
-	</div>
-	<div style="overflow-y:scroll;height:800px;padding-top:2em;" class="print">
-		<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator !== 'Division'">
-			<div style="width:120px;">
-				<div>
-					<span style="font-size:0.9em">{{$index+1}} )</span>
-				</div>
-				<div>
-					<div style="display: inline-block;width:10px;"></div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">{{q.number_1}}</span></div>
-				</div>
-				<div style="border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#000000;">
-					<div style="display: inline-block;width:10px;font-size:2em;">
-						<span ng-if="model.operator == 'Addition'">+</span>
-						<span ng-if="model.operator == 'Subtraction'">-</span>
-						<span ng-if="model.operator == 'Multiplication'">X</span>
-					</div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">{{q.number_2}}</span></div>
-				</div>
-				<div style="height:80px;">
-					<div style="display: inline-block;width:10px;"></div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">&nbsp;</span></div>
-				</div>
-			</div>
-		</div>
-		<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator == 'Division'">
-			<div style="width:120px;">
-				<div>
-					<span style="font-size:0.9em">{{$index+1}} )</span>
-				</div>
-				<div style="margin:0;padding:0;display: inline-block;width:40px;text-align:right;"><span style="margin:0;padding-right:5px;font-size:2em;">{{q.number_2}}</span></div>
-				<div style="margin:0;padding-left:5px;display: inline-block;text-align:left;border-top-style:solid;border-top-width:1px;border-top-color:#000000;border-left-style:solid;border-left-width:1px;border-left-color:#000000;">
-					<span style="margin:0;padding:0;font-size:2em;">{{q.number_1}}</span>
-				</div>
-				<div style="height:150px;">
-					<span style="margin:0;padding:0;font-size:2em;">&nbsp;</span>
-				</div>
-			</div>
-		</div>
-	</div>	
-	<div style="page-break-before: always;padding:1em;">
-		<H1><span style="color: Tomato !important;font-size:0.8em;margin-right:0.3em;"><i class="fas fa-gem"></i></span>MathGem</H1><span style="font-size:1.1em;margin-bottom:0px;">Free Basic Math Worksheet</span><span style="font-size:1.1em;margin-bottom:0px;"><p>http://www.MathGem.ca</p></span>
-		<H3>Answer Sheet</H3>
-		<hr/>
-		<div ng-repeat="a in model.answers track by $index" style="width:140px;display:inline-block;">
-			
-				<span style="font-size:1em"><p>{{$index+1}} ) {{a.answer}}</p></span>
-			
-		</div>
-		<hr/>
-		<div>
-			<p>Copyright © mathgem.ca 2019 | Inquiries, Feature Request or Bug Report: leez79@gmail.com </p>
-		</div>
-	</div>
-</div>
 
+			<!-- Control Panel -->
+			<div style="display:inline-block;text-align:right;width:24%;">
+				First digit: <input type="number" name="firstDigit" ng-model="model.firstDigit"/><br/>
+				Second digit: <input type="number" name="secondDigit" ng-model="model.secondDigit"/><br/>
+				Number of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions"/><br/>
+				Arithmetic Operators: <select name="operator" ng-model="model.operator">
+					<option value="Addition">(+) Addition</option>
+					<option value="Subtraction">(-) Subtraction</option>
+					<option value="Multiplication">(*) Multiplication</option>
+					<option value="Division">(/) Division</option>
+				</select><br/>
+				<span>
+					<input type="checkbox" ng-model="model.isPositive">First number > Second number<br>
+				</span>
+				<button ng-click="onClickGenerate()">Generate</button>
+			</div>		
+		</div>
+		<!-- Main page starts here -->
+		<div style="overflow:auto;height:80%;padding-top:2em;" class="print">
+			<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator !== 'Division'">
+				<div style="width:120px;">
+					<div>
+						<span style="font-size:0.9em">{{$index+1}} )</span>
+					</div>
+					<div>
+						<div style="display: inline-block;width:10px;"></div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">{{q.number_1}}</span></div>
+					</div>
+					<div style="border-bottom-style:solid;border-bottom-width:1px;border-bottom-color:#000000;">
+						<div style="display: inline-block;width:10px;font-size:2em;">
+							<span ng-if="model.operator == 'Addition'">+</span>
+							<span ng-if="model.operator == 'Subtraction'">-</span>
+							<span ng-if="model.operator == 'Multiplication'">X</span>
+						</div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">{{q.number_2}}</span></div>
+					</div>
+					<div style="height:80px;">
+						<div style="display: inline-block;width:10px;"></div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">&nbsp;</span></div>
+					</div>
+				</div>
+			</div>
+			<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator == 'Division'">
+				<div style="width:120px;">
+					<div>
+						<span style="font-size:0.9em">{{$index+1}} )</span>
+					</div>
+					<div style="margin:0;padding:0;display: inline-block;width:40px;text-align:right;"><span style="margin:0;padding-right:5px;font-size:2em;">{{q.number_2}}</span></div>
+					<div style="margin:0;padding-left:5px;display: inline-block;text-align:left;border-top-style:solid;border-top-width:1px;border-top-color:#000000;border-left-style:solid;border-left-width:1px;border-left-color:#000000;">
+						<span style="margin:0;padding:0;font-size:2em;">{{q.number_1}}</span>
+					</div>
+					<div style="height:150px;">
+						<span style="margin:0;padding:0;font-size:2em;">&nbsp;</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Answer Sheet starts here -->
+		<div style="page-break-before: always;padding:1em;" class="hideFromScreen" id="answer-sheet">
+			<H1><span style="color: Tomato !important;font-size:0.8em;margin-right:0.3em;"><i class="fas fa-gem"></i></span>MathGem</H1><span style="font-size:1.1em;margin-bottom:0px;">Free Basic Math Worksheet</span><span style="font-size:1.1em;margin-bottom:0px;"><p>http://www.MathGem.ca</p></span>
+			<H3>Answer Sheet</H3>
+			<hr/>
+			<div ng-repeat="a in model.answers track by $index" style="width:140px;display:inline-block;">
+				
+					<span style="font-size:1em"><p>{{$index+1}} ) {{a.answer}}</p></span>
+				
+			</div>
+			<hr/>
+			<div>
+				<p>Copyright © mathgem.ca 2019 | Inquiries, Feature Request or Bug Report: leez79@gmail.com </p>
+			</div>
+		</div>
+
+		<!-- Copyright -->
+		<div style="width:100%;padding:0.5em;text-align:center;background-color:#cecece;" class="dontprint">
+			<p style="margin:0">Copyright © mathgem.ca 2019 | Inquiries, Feature Request or Bug Report: leez79@gmail.com </p>
+		</div>
+	</div>
 </body>
 </html>
