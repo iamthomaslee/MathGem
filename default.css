@@ -1,11 +1,14 @@
 @media only print {
     .dontprint {
-        display: none; 
+        display: none;
     }
     .print { 
         height:100% !important;
         overflow: hidden !important;
     }
+}
+html {
+    height: 100%;
 }
 body {
     font-family: 'Open Sans', sans-serif, 'Roboto Mono', monospace;
@@ -15,18 +18,109 @@ h1 {
     margin-top: 0px;
     margin-bottom: 0px;
 }
+.content {
+    height: 100%;
+    padding-top: 1em;
+}
+.control-panel {
+    background-color:black;
+    color:white;
+    width:235px;;
+    margin-left:-1em;
+    margin-top:1em;
+    margin-bottom:0.5em;
+    padding:0.5em;
+    left: 0px;
+    display:block;
+    float: left;
+}
+.control-panel input {
+    
+}
+.copyright {
+    width:100%;
+    padding:0.5em;
+    text-align:center;
+    background-color:#cecece;
+}
+.copyright p {
+    margin:0;
+}
+.generate {
+    background-color:rgb(207, 207, 144);
+    color:black;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 700;
+    font-size:1.3em;
+    padding:0.5em;
+    margin-left:0.4em;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    width: 200px;
+}
+.generate:hover {
+    opacity: 0.80;
+    background-color:tomato;
+    color:white;
+}
+.logo-box {
+    display:inline-block;
+    text-align:left;
+    vertical-align:top;
+}
+.logo-box-icon {
+    color: red !important;
+    font-size:2em;
+}
+.logo-desc {
+    font-size:0.3em;
+    margin-bottom:0px;
+}
+.logo-gem {
+    font-weight:300;
+    font-family:Comfortaa;
+    font-size:2em;
+}
+.logo-math {
+    font-weight:800;
+    font-family:Comfortaa;
+    font-size:2em;
+}
+.left-menu {
+    width: 235px;
+    background-color: #cecece;
+    padding: 1em;
+    margin: 0;
+    float: left;
+}
+.numbers {
+    width: 80px;
+    margin-bottom:0.5em;
+}
+.operator {
+    margin-bottom:0.5em;
+}
+.questions {
+    width: 70px;
+    margin-bottom:0.5em;
+}
 .top-button {
-    width: 230px;
-    padding:1em;
-    margin:0.5em;
     background-color:white;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 700;
     font-size:1.3em;
+    padding:0.5em;
+    margin-top:0.5em;
+    margin-bottom:0.5em;
     position: relative;
     float: left;
     cursor: pointer;
+    width: 200px;
 }
 .top-button:hover {
     opacity: 0.80;
