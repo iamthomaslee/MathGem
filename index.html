@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="./init.js"></script>
 	<!-- <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
@@ -32,9 +33,63 @@
 	<meta name="og:image" property="og:image" content="http://mathgem.ca/assets/mathgem_image.png"/>
 	<meta name="og:url" property="og:url" content="http://www.mathgem.ca/"/>
 	<link href="http://www.mathgem.ca/" rel="canonical">
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({
+			google_ad_client: "ca-pub-2411226195478272",
+			enable_page_level_ads: true
+		});
+	</script>
 </head>
 <body>
-	<div ng-app="mathApp" ng-controller="appController" class="app">
+	<div ng-app="mathApp" ng-controller="appController" class="app no-float">
+		<!-- Modal begins here -->
+		<div class="modal fade " id="about-mathgem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-calculator-alt"></i> About MathGem</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					</div>
+					<div class="modal-body">
+						<p>MathGem is a website that generates printable basic math (arithmetic) worksheets for free. The website does not require any registration or login.</p>
+						<h4><b>For users: inquiries, issues, and feature request</b></h4>
+						<p>Hi, I am Thomas. Thanks for visiting MathGem.ca. I initially built this web page for my kids (maybe for my wife?). I didn't spend too much time on it, so it might have some issues. If you find any problems or if you want another features, please contact me by email <a href="mailto:leez79@gmail.com">leez79@gmail.com</a>.
+						<h4><b>For programmers!</b></h4>
+						<p>The code is available on github. <a href="https://github.com/iamthomaslee/basicMath" target="_blank">https://github.com/iamthomaslee/basicMath</a></p>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="modal fade " id="how-to-print" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-info-square"></i> How To Print Worksheet?</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				</div>
+				<div class="modal-body">
+					<h4><b>Ctrl + P from the browser to print</b></h4>
+					<p>It is already set to print the questions and answers properly, but it can be viewed/printed differently on each browser or on each computer. By default, the header (where the logo and top menus are located) will not be shown on the printed page.</p>
+					<h4><b>Adjust size</b></h4>
+					<p>On the Print pop-up screen, it is possible to change the print settings. If you want to include more questions per page, just change the scale to 70% or to any ratio you want. 
+					<h4><b>Answer sheet</b></h4>
+					<p style="color:red;">The answer sheet will be printed at the end of the pages.</p>
+				</div>
+				<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		<!-- Modal ends here -->
 		<div class="dontprint left-menu">
 			<div class="logo-box">
 				<span class="logo-box-icon"><i class="fas fa-calculator-alt"></i></span><span class="logo-math"> Math</span><span class="logo-gem">Gem</span><br/><span clas="logo-desc">Free Basic Math Worksheet</span>
@@ -43,84 +98,43 @@
 				<!-- Control Panel -->
 				<div class="control-panel">
 					<div style="display:inline-block;position: relative;top: 0px;">
-						Number 1: <input type="number" name="firstDigit" ng-model="model.firstDigit" class="numbers"/> digits<br/>
-						Number 2: <input type="number" name="secondDigit" ng-model="model.secondDigit" class="numbers"/> digits<br/>
-						Num of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions" class="questions"/><br/>
-						Operator: <select name="operator" ng-model="model.operator" class="operator">
-							<option value="Addition">(+) Addition</option>
-							<option value="Subtraction">(-) Subtraction</option>
-							<option value="Multiplication">(*) Multiplication</option>
-							<option value="Division">(/) Division</option>
-						</select><br/>
-						<span>
-							<input type="checkbox" ng-model="model.isPositive"> Number 1 >= Number 2<br>
-						</span>
+						<div style="background-color:#333333;margin:0;padding:0.5em;width:235px;">
+							Number 1: <input type="number" name="firstDigit" ng-model="model.firstDigit" class="numbers"/> digits<br/>
+							Max first value: <input type="number" name="maxFirstValue" ng-model="model.maxFirstValue" class="numbers"/><br/>
+						</div>
+						<div style="background-color:#666666;margin:0;padding:0.5em;">
+							Number 2: <input type="number" name="secondDigit" ng-model="model.secondDigit" class="numbers"/> digits<br/>
+							Max second value: <input type="number" name="maxSecondValue" ng-model="model.maxSecondValue" class="numbers"/><br/>
+						</div>
+						<div style="background-color:#333333;margin:0;padding:0.5em;margin-bottom:1em;">
+							Num of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions" class="questions"/><br/>
+							Operator: <select name="operator" ng-model="model.operator" class="operator">
+								<option value="Addition">(+) Addition</option>
+								<option value="Subtraction">(-) Subtraction</option>
+								<option value="Multiplication">(*) Multiplication</option>
+								<option value="Division">(/) Division</option>
+							</select><br/>
+							<span>
+								<input type="checkbox" ng-model="model.isPositive"> Number 1 >= Number 2<br>
+							</span>
+						</div>
 					</div>
 					<div class="generate" data-toggle="modal" ng-click="onClickGenerate()"><span><i class="far fa-cogs"></i> Generate</span></div>
 					<!-- Print -->
-					<div class="generate" data-toggle="modal" onclick="window.print();"><span><i class="fas fa-print"></i> Print a Worksheet</span></div>
-				</div>	
-
+					<div class="generate" data-toggle="modal" onclick="window.print();"><span><i class="fas fa-print"></i> Print</span></div>
+				</div>
 				<!-- Modal: About MathGem -->
 				<div class="top-button" data-toggle="modal" data-target="#about-mathgem"><span><i class="fas fa-calculator-alt"></i> About MathGem</span></div>
-
-				<!-- Modal -->
-				<div class="modal fade " id="about-mathgem" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-						<div class="modal-content">
-							<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-calculator-alt"></i> About MathGem</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-								<span aria-hidden="true">&times;</span>
-							</button>
-							</div>
-							<div class="modal-body">
-								<p>MathGem is a website that generates printable basic math (arithmetic) worksheets for free. The website does not require any registration or login.</p>
-								<h4><b>For users: inquiries, issues, and feature request</b></h4>
-								<p>Hi, I am Thomas Lee. Thanks for visiting MathGem website. I initially built this web page for my kids (maybe for my wife?). I didn't spend too much time on it, so it might have some issues. If you find any problems or if you want to add additional features, please contact me by email <a href="mailto:leez79@gmail.com">leez79@gmail.com</a>.
-								<h4><b>For programmers!</b></h4>
-								<p>The code is available on github. <a href="https://github.com/iamthomaslee/basicMath" target="_blank">https://github.com/iamthomaslee/basicMath</a></p>
-							</div>
-							<div class="modal-footer">
-							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							</div>
-						</div>
-					</div>
-				</div>
-				
 				<!-- Modal: About MathGem -->
 				<div class="top-button" data-toggle="modal" data-target="#how-to-print"><span><i class="fas fa-info-square"></i> Ctrl+P to Print</span></div>
-				
-				<!-- Modal -->
-				<div class="modal fade " id="how-to-print" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalCenterTitle"><i class="fas fa-info-square"></i> How To Print Worksheet?</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-						</div>
-						<div class="modal-body">
-							<h4><b>Ctrl + P from the browser to print</b></h4>
-							<p>It is already set to print the questions and answers properly, but it can be viewed/printed differently on each browser or on each computer. By default, the header (where the logo and top menus are located) will not be shown on the printed page.</p>
-							<h4><b>Adjust size</b></h4>
-							<p>On the Print pop-up screen, it is possible to change the print settings. If you want to include more questions per page, just change the scale to 70% or to any ratio you want. 
-							<h4><b>Answer sheet</b></h4>
-							<p style="color:red;">The answer sheet will be printed at the end of the pages.</p>
-						</div>
-						<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-						</div>
-					</div>
-					</div>
-				</div>
 			</div>
+			<span style="font-size:0.8em;">Copyright © mathgem.ca 2019 <br/> Inquiries at leez79@gmail.com </span>
 		</div>
 		<!-- Main page starts here -->
 		<div class="print content">
+			<div style="margin-top:2em;height:3em;display:block;margin-bottom:2em;width:45%;left:50%;position:relative;text-align:left;font-size:2em;">Name:<br/><hr/></div>
 			<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:1em;margin-left:1em;" ng-if="model.operator !== 'Division'">
-				<div style="width:120px;">
+				<div style="width:120px;margin-top:3em;">
 					<div>
 						<span style="font-size:0.9em">{{$index+1}} )</span>
 					</div>
@@ -134,13 +148,13 @@
 							<span ng-if="model.operator == 'Multiplication'">X</span>
 						</div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">{{q.number_2}}</span></div>
 					</div>
-					<div style="height:80px;">
+					<div style="height:{{model.distance}}em;">
 						<div style="display: inline-block;width:10px;"></div><div style="margin:0;padding:0;display: inline-block;width:110px;text-align:right;"><span style="margin:0;padding:0;font-size:2em;">&nbsp;</span></div>
 					</div>
 				</div>
 			</div>
 			<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator == 'Division'">
-				<div style="width:120px;">
+				<div style="width:120px;margin-top:3em;">
 					<div>
 						<span style="font-size:0.9em">{{$index+1}} )</span>
 					</div>
@@ -148,33 +162,27 @@
 					<div style="margin:0;padding-left:5px;display: inline-block;text-align:left;border-top-style:solid;border-top-width:1px;border-top-color:#000000;border-left-style:solid;border-left-width:1px;border-left-color:#000000;">
 						<span style="margin:0;padding:0;font-size:2em;">{{q.number_1}}</span>
 					</div>
-					<div style="height:150px;">
+					<div style="height:{{model.distance}}em;">
 						<span style="margin:0;padding:0;font-size:2em;">&nbsp;</span>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<!-- Answer Sheet starts here -->
-		<div style="page-break-before: always;padding:1em;" class="hideFromScreen" id="answer-sheet">
-			<H1><span style="color: red !important;font-size:0.8em;margin-right:0.3em;"><i class="fas fa-gem"></i></span>MathGem</H1><span style="font-size:1.1em;margin-bottom:0px;">Free Basic Math Worksheet</span><span style="font-size:1.1em;margin-bottom:0px;"><p>http://www.MathGem.ca</p></span>
+		<div class="hideFromScreen print-answer" id="answer-sheet">
+			<div class="logo-box">
+				<span class="logo-box-icon"><i class="fas fa-calculator-alt"></i></span><span class="logo-math"> Math</span><span class="logo-gem">Gem</span><br/><span clas="logo-desc">Free Basic Math Worksheet</span>
+			</div>
 			<H3>Answer Sheet</H3>
 			<hr/>
 			<div ng-repeat="a in model.answers track by $index" style="width:140px;display:inline-block;">
-				
 					<span style="font-size:1em"><p>{{$index+1}} ) {{a.answer}}</p></span>
-				
 			</div>
 			<hr/>
 			<div>
 				<p>Copyright © mathgem.ca 2019 | Inquiries, Feature Request or Bug Report: leez79@gmail.com </p>
 			</div>
-		</div>
-
-		<!-- Copyright -->
-		<div class="dontprint copyright">
-			<p>Copyright © mathgem.ca 2019 | Inquiries, Feature Request or Bug Report: leez79@gmail.com </p>
-		</div>
+		</div>		
 	</div>
 </body>
 </html>
