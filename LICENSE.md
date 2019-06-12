@@ -1,3 +1,3 @@
-Copyright (c) 2017 Thomas Lee
+Copyright (c) 2017-2019 Thomas Lee
 
 MIT License
