@@ -19,6 +19,10 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138578614-1"></script>
 	<link rel="stylesheet" type="text/css" href="./default.css">
+	<link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="./favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
 	<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
@@ -96,7 +100,7 @@
 					<div style="display:inline-block;position: relative;top: 0px;">
 						<div style="background-color:#333333;margin:0;padding:0.5em;width:250px;">
 							<span style="font-family:'Open Sans', sans-serif; font-weight: 700;">NUMBER 1</span><br/>
-							<span style="font-size:0.8em;padding-left:2em;font-family:'Roboto Mono', monospace">Num of digits: <input type="number" name="firstDigit" ng-model="model.firstDigit" class="numbers"/></span><br/>
+							<span style="font-size:0.8em;padding-left:2em;font-family:'Roboto Mono', monospace">Num of digits: <input type="number" step="1" name="firstDigit" ng-model="model.firstDigit" class="numbers"/></span><br/>
 							<span style="font-size:0.8em;padding-left:2em;font-family:'Roboto Mono', monospace">Maximum value: <input type="number" name="maxFirstValue" ng-model="model.maxFirstValue" class="numbers"/></span>
 						</div>
 						<div style="background-color:#666666;margin:0;padding:0.5em;">
@@ -121,6 +125,9 @@
 							</span>
 							<span style="font-size:0.8em;padding-left:1em;font-family:'Roboto Mono', monospace">
 								<input type="checkbox" ng-model="model.isNameVisible"> Display and Print Name<br>
+							</span>
+							<span style="font-size:0.8em;padding-left:1em;font-family:'Roboto Mono', monospace">
+								<span style="color:rgb(212, 212, 0);cursor: pointer;" ng-click="decreaseGap()"><i class="fas fa-minus-square"></i></span> Gap between Rows <span style="color:rgb(212, 212, 0);cursor: pointer;" data-toggle="modal" ng-click="increaseGap()"><i class="fas fa-plus-square"></i></span>
 							</span>
 						</div>
 					</div>

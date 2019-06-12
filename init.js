@@ -3,7 +3,7 @@ var app = angular.module('mathApp', []).constant('_', window._);
 app.controller('appController', function ($scope, $http, $window, $timeout) {
     var _ = $window._;
     $scope.model = {
-		isNameVisible: true,
+		isNameVisible: false,
       	firstDigit: 3,
 		secondDigit: 2,
 		numberOfQuestions: 100,
@@ -20,6 +20,8 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 
     //functions
 	$scope.onClickGenerate = onClickGenerate;
+	$scope.increaseGap = increaseGap;
+	$scope.decreaseGap = decreaseGap;
     activate();
 	
 	// limit the length of the first digit up to 5
@@ -85,7 +87,15 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 		}
 		getAnswer();
 	}
+
+	function increaseGap() {
+		$scope.model.distance += 2;
+	}
 	
+	function decreaseGap() {
+		$scope.model.distance -= 2;
+	}
+
 	function generate() {
 		var number_1 = 0;
 		do {
@@ -116,8 +126,13 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 			number_2: number_2
 		});		
 
-		// calculate distance
-		$scope.model.distance = $scope.model.secondDigit * 2 + 3;
+		// calculate distance between rows
+		if ($scope.model.secondDigit > 1) {
+			$scope.model.distance = $scope.model.secondDigit * 2 + 3;
+		} else {
+			$scope.model.distance = 3;
+		}
+		
 	}
 	
 	function getAnswer() {
