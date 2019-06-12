@@ -89,11 +89,15 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 	}
 
 	function increaseGap() {
-		$scope.model.distance += 2;
+		if ($scope.model.distance < 20) {
+			$scope.model.distance += 2;
+		}		
 	}
 	
 	function decreaseGap() {
-		$scope.model.distance -= 2;
+		if ($scope.model.distance > 2) {
+			$scope.model.distance -= 2;
+		}
 	}
 
 	function generate() {
