@@ -37,13 +37,6 @@
 	<meta name="og:image" property="og:image" content="http://mathgem.ca/assets/mathgem_image.png"/>
 	<meta name="og:url" property="og:url" content="http://www.mathgem.ca/"/>
 	<link href="http://www.mathgem.ca/" rel="canonical">
-	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({
-			google_ad_client: "ca-pub-2411226195478272",
-			enable_page_level_ads: true
-		});
-	</script>
 </head>
 <body>
 	<div ng-app="mathApp" ng-controller="appController" class="app no-float">
@@ -166,11 +159,11 @@
 				</div>
 			</div>
 			<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:2em;margin-left:2em;" ng-if="model.operator == 'Division'">
-				<div style="width:120px;margin-top:3em;">
+				<div style="margin-top:3em;">
 					<div>
 						<span style="font-size:0.9em">{{$index+1}} )</span>
 					</div>
-					<div style="margin:0;padding:0;display: inline-block;width:40px;text-align:right;"><span style="margin:0;padding-right:5px;font-size:2em;">{{q.number_2}}</span></div>
+					<div style="margin:0;padding:0;display: inline-block;text-align:right;"><span style="margin:0;padding-right:5px;font-size:2em;">{{q.number_2}}</span></div>
 					<div style="margin:0;padding-left:5px;display: inline-block;text-align:left;border-top-style:solid;border-top-width:1px;border-top-color:#000000;border-left-style:solid;border-left-width:1px;border-left-color:#000000;">
 						<span style="margin:0;padding:0;font-size:2em;">{{q.number_1}}</span>
 					</div>
