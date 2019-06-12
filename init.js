@@ -3,18 +3,19 @@ var app = angular.module('mathApp', []).constant('_', window._);
 app.controller('appController', function ($scope, $http, $window, $timeout) {
     var _ = $window._;
     $scope.model = {
-      firstDigit: 3,
-			secondDigit: 2,
-			numberOfQuestions: 100,
-			operator: "Multiplication",
-			questions: [],
-			answers: [],
-			maximumFirst: 5,
-			maximumSecond: 5,
-			isPositive: false,
-			distance: 7,
-			maxFirstValue: 999,
-			maxSecondValue: 99
+		isNameVisible: true,
+      	firstDigit: 3,
+		secondDigit: 2,
+		numberOfQuestions: 100,
+		operator: "Multiplication",
+		questions: [],
+		answers: [],
+		maximumFirst: 5,
+		maximumSecond: 5,
+		isPositive: false,
+		distance: 7,
+		maxFirstValue: 999,
+		maxSecondValue: 99
     };
 
     //functions
@@ -66,9 +67,9 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 	
 	$scope.$watch("model.operator", function (newValue, oldValue) {
         if (newValue != oldValue) {
-					getAnswer();
+			getAnswer();
         }
-		});
+	});
 
     function activate() {
 		for (var i = 0; i<$scope.model.numberOfQuestions; i++) {

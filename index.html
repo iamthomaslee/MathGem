@@ -13,7 +13,7 @@
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"/> -->
 	<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed:400,700|Comfortaa|Open+Sans:300,800|Heebo:900" rel="stylesheet">	
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono|Roboto+Condensed:400,700|Comfortaa|Open+Sans:300,800|Heebo:900" rel="stylesheet">	
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-Bx4pytHkyTDy3aJKjGkGoHPt3tvv6zlwwjc3iqN7ktaiEMLDPqLSZYts2OjKcBx1" crossorigin="anonymous">
 	<!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">	 -->
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -96,24 +96,33 @@
 				<!-- Control Panel -->
 				<div class="control-panel">
 					<div style="display:inline-block;position: relative;top: 0px;">
-						<div style="background-color:#333333;margin:0;padding:0.5em;width:235px;">
-							Number 1: <input type="number" name="firstDigit" ng-model="model.firstDigit" class="numbers"/> digits<br/>
-							Max first value: <input type="number" name="maxFirstValue" ng-model="model.maxFirstValue" class="numbers"/><br/>
+						<div style="background-color:#333333;margin:0;padding:0.5em;width:250px;">
+							<span style="font-family:'Open Sans', sans-serif; font-weight: 700;">NUMBER 1</span><br/>
+							<span style="font-size:0.8em;padding-left:2em;font-family:'Roboto Mono', monospace">Num of digits: <input type="number" name="firstDigit" ng-model="model.firstDigit" class="numbers"/></span><br/>
+							<span style="font-size:0.8em;padding-left:2em;font-family:'Roboto Mono', monospace">Maximum value: <input type="number" name="maxFirstValue" ng-model="model.maxFirstValue" class="numbers"/></span>
 						</div>
 						<div style="background-color:#666666;margin:0;padding:0.5em;">
-							Number 2: <input type="number" name="secondDigit" ng-model="model.secondDigit" class="numbers"/> digits<br/>
-							Max second value: <input type="number" name="maxSecondValue" ng-model="model.maxSecondValue" class="numbers"/><br/>
+							<span style="font-family:'Open Sans', sans-serif; font-weight: 700;">NUMBER 2</span><br/>
+							<span style="font-size:0.8em;padding-left:2em;font-family:'Roboto Mono', monospace">Num of digits: <input type="number" name="secondDigit" ng-model="model.secondDigit" class="numbers"/></span><br/>
+							<span style="font-size:0.8em;padding-left:2em;font-family:'Roboto Mono', monospace">Maximum value: <input type="number" name="maxSecondValue" ng-model="model.maxSecondValue" class="numbers"/></span>
 						</div>
 						<div style="background-color:#333333;margin:0;padding:0.5em;margin-bottom:1em;">
-							Num of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions" class="questions"/><br/>
-							Operator: <select name="operator" ng-model="model.operator" class="operator">
-								<option value="Addition">(+) Addition</option>
-								<option value="Subtraction">(-) Subtraction</option>
-								<option value="Multiplication">(*) Multiplication</option>
-								<option value="Division">(/) Division</option>
-							</select><br/>
-							<span>
+							<span style="font-family:'Open Sans', sans-serif; font-weight: 700;">OTHER OPTIONS</span><br/>
+							<span style="font-size:0.8em;padding-left:1em;font-family:'Roboto Mono', monospace">Num of Questions: <input type="number" name="numberOfQuestions" ng-model="model.numberOfQuestions" class="questions"/></span><br/>
+							<span style="font-size:0.8em;padding-left:1em;font-family:'Roboto Mono', monospace">Operator: </span>
+							<span style="font-size:0.9em;font-family:'Roboto'">
+								<select name="operator" ng-model="model.operator" class="operator">
+									<option value="Addition">(+) Addition</option>
+									<option value="Subtraction">(-) Subtraction</option>
+									<option value="Multiplication">(*) Multiplication</option>
+									<option value="Division">(/) Division</option>
+								</select>
+							</span><br/>
+							<span style="font-size:0.8em;padding-left:1em;font-family:'Roboto Mono', monospace">
 								<input type="checkbox" ng-model="model.isPositive"> Number 1 >= Number 2<br>
+							</span>
+							<span style="font-size:0.8em;padding-left:1em;font-family:'Roboto Mono', monospace">
+								<input type="checkbox" ng-model="model.isNameVisible"> Display and Print Name<br>
 							</span>
 						</div>
 					</div>
@@ -130,7 +139,7 @@
 		</div>
 		<!-- Main page starts here -->
 		<div class="print content">
-			<div style="margin-top:2em;height:3em;display:block;margin-bottom:2em;width:45%;left:50%;position:relative;text-align:left;font-size:2em;">Name:<br/><hr/></div>
+			<div ng-if="model.isNameVisible == true" style="margin-top:2em;height:3em;display:block;margin-bottom:2em;width:45%;left:50%;position:relative;text-align:left;font-size:2em;">Name:<br/><hr/></div>
 			<div ng-repeat="q in model.questions track by $index" style="display: inline-block;margin-right:1em;margin-left:1em;" ng-if="model.operator !== 'Division'">
 				<div style="width:120px;margin-top:3em;">
 					<div>

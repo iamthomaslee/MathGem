@@ -44,11 +44,11 @@ h1 {
 }
 .content {
     height: 70%;
-    padding-left:1em;
+    padding-left:2em;
     padding-top: 1em;
     padding-bottom: 1em;
     width: 80%;
-    left:235px;
+    left:250px;
     float:left;
     position:relative;
     background-color:white;
@@ -56,7 +56,7 @@ h1 {
 .control-panel {
     background-color:black;
     color:white;
-    width:235px;
+    width:250px;
     margin-left:-1em;
     margin-top:1em;
     margin-bottom:0.5em;
