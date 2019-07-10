@@ -2,4 +2,4 @@
 Generates Basic Math (arithmetic) Questions.
 
 # Website
-[go](http://www.mathgem.ca){:target="_blank"}
+<a href="http://www.mathgem.ca" target="blank">www.mathgem.ca</a>
