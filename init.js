@@ -15,7 +15,9 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 		isPositive: false,
 		distance: 7,
 		maxFirstValue: 999,
-		maxSecondValue: 99
+		maxSecondValue: 99,
+		firstNegative: "no",
+		secondNegative: "no"
     };
 
     //functions
@@ -124,6 +126,24 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 			number_1 = number_2;
 			number_2 = temp_num;
 		}
+
+		// first number negative
+        var plusOrMinus = 1;
+        if ($scope.model.firstNegative == "random") {
+            plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+        } else if ($scope.model.firstNegative == "all") {
+            plusOrMinus = -1;
+        }
+        number_1 = number_1 * plusOrMinus;
+
+        // first number negative
+        plusOrMinus = 1;
+        if ($scope.model.secondNegative == "random") {
+            plusOrMinus = Math.random() < 0.5 ? -1 : 1;
+        } else if ($scope.model.secondNegative == "all") {
+            plusOrMinus = -1;
+        }
+        number_2 = number_2 * plusOrMinus;
 		
 		$scope.model.questions.push({
 			number_1: number_1,
