@@ -109,6 +109,9 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 			if (number_1 > $scope.model.maxFirstValue) {
 				number_1 = number_1 % $scope.model.maxFirstValue;
 			}
+			if (number_1 == 1) {
+			    number_1 = 0;
+			}
 		}
 		while(number_1 >= Math.pow(10,$scope.model.firstDigit) || number_1 < Math.pow(10,$scope.model.firstDigit-1))
 		
@@ -118,6 +121,9 @@ app.controller('appController', function ($scope, $http, $window, $timeout) {
 			if (number_2 > $scope.model.maxSecondValue) {
 				number_2 = number_2 % $scope.model.maxSecondValue;
 			}
+			if (number_2 == 1) {
+                number_2 = 0;
+            }
 		}
 		while(number_2 >= Math.pow(10,$scope.model.secondDigit) || number_2 < Math.pow(10,$scope.model.secondDigit-1))
 
